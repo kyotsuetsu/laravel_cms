@@ -13,7 +13,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <!--追記-->
+        <!--ageのために追記-->
         @livewireStyles
     </head>
     
@@ -36,7 +36,7 @@
                 {{ $slot }}
             </main>
         </div>
-    <!--追記-->
+    <!---ageのために追記-->
     @livewireScripts
     </body>
 </html>

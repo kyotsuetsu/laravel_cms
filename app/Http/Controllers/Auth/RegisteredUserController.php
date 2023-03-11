@@ -34,19 +34,18 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            // 'birthday' => ['required', 'string', 'max:255'],
             'age' => ['required', 'string', 'max:200'],
-            // 'language_level' => ['required', 'string', 'max:255'],
+            'language_level' => ['required', 'string', 'max:255'],
+            'talk_length' => ['required', 'string', 'max:255'],
         ]);
 
         $user = User::create([
             'name' => $request->name,//リクエストの中のnameが'name'に入れられている
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            // 'birthday' => $request->birthday,
             'age' => $request->age,
-            
-            // 'language_level'=> $request->language_level,
+            'language_level'=> $request->language_level,
+            'talk_length'=> $request->talk_length,
         ]);
 
         event(new Registered($user));

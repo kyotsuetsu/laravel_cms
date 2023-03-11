@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-        // $table->string('birthday')->nullable();
-        $table->integer('age');//年齢
-        $table->string('language_level');
-        $table->string('talk_length');
-        
+        Schema::create('photos', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -29,8 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('photos');
     }
 };

@@ -36,6 +36,20 @@ class ProfileController extends Controller
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
+    
+    // // プロフィール画像アップロード用に追加
+    //  public function store(Request $request)
+    // {
+    //     // ディレクトリ名
+    //     $dir = 'sample';
+
+    //     // sampleディレクトリに画像を保存
+    //     $request->file('image')->store('public/' . $dir);
+
+    //     return redirect('/');
+    // }
+    
+    
 
     /**
      * Delete the user's account.
